@@ -32,6 +32,7 @@ function updateGame() {
         character.newPosition();
         character.update();
         updateObstacles();
+        gameOver();
 }
 
 
