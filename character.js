@@ -9,15 +9,15 @@ const character = new Component (30, 30, 'pink', 0, 200);
         //When a key is pressed 
 document.addEventListener('keydown', e => {
     switch (e.keyCode){
-        case 37: 
-        character.speedX -= 1;
-        break;
+   //     case 37: 
+   //     character.speedX -= 1;
+   //     break;
         case 38:
         character.speedY -= 1;
         break;
-        case 39: 
-        character.speedX += 1;
-        break;
+    //    case 39: 
+    //    character.speedX += 1;
+    //    break;
         case 40:
         character.speedY += 1;
         break;
@@ -26,7 +26,7 @@ document.addEventListener('keydown', e => {
 
         //When a key is released = stop 
 document.addEventListener('keyup', () => {
-    character.speedX = 0;
+    //character.speedX = 0;
     character.speedY = 0;
 });
 
