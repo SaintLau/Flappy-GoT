@@ -7,6 +7,8 @@ let obstacles = []; //array to receive random values to generate obstacles
 //Here will be the main variable to make this work - Start, Stop, Points
 const game = {
     frames: 0, //start has no moving
+    score: 0, //start has no moving
+
     start: function() {
         this.interval = setInterval(updateGame, 20);
     },
@@ -14,15 +16,24 @@ const game = {
     stop: function() {
         clearInterval(this.interval);
     },
+
     clear: function() {
         context.clearRect(0, 0, wallCanvas.width, wallCanvas.height);
     },
+
     drawBackground: function() {
         updateCanvasBackground();
+    },
+
+    keepingScore: function() {
+        if (game.frames > 818 && game.frames % 120 === 0) {
+            this.score++;
+        }
+    //    const points = Math.floor(this.frames / 100);
+        context.font = '20px game of thrones';
+        context.fillStyle = 'red';
+        context.fillText(`Score: ${this.score}`, 350, 50);
     }
-    //score: function() {
-    //
-    //}
 }
 
 //function to make the game run
@@ -33,6 +44,7 @@ function updateGame() {
         character.update();
         updateObstacles();
         gameOver();
+        game.keepingScore();
 }
 
 
@@ -67,7 +79,7 @@ class Component {
     bottom() {
         return this.y + this.height;
     }
-    
+
     hitWith(obstacle) {  //method for the hit to stop the game
         return !(this.bottom() < obstacle.top() ||
                  this.top() > obstacle.bottom() ||
@@ -86,7 +98,7 @@ function updateObstacles() {
     }
     //the obstacles
     game.frames += 1;
-    console.log(game.frames);
+
     if (game.frames % 120 === 0) {
 
     

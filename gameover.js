@@ -10,5 +10,5 @@ function gameOver() {
 
     if(hit) {
         game.stop();
-    }
+    } 
 }
