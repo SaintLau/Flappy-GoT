@@ -67,6 +67,13 @@ class Component {
     bottom() {
         return this.y + this.height;
     }
+    
+    hitWith(obstacle) {  //method for the hit to stop the game
+        return !(this.bottom() < obstacle.top() ||
+                 this.top() > obstacle.bottom() ||
+                 this.right() < obstacle.left() ||
+                 this.left() > obstacle.right())
+    }
 }
 
 
