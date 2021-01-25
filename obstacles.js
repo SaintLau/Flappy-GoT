@@ -29,6 +29,8 @@ const game = {
 function updateGame() {
         game.clear();
         game.drawBackground();
+        character.newPosition();
+        character.update();
         updateObstacles();
 }
 
@@ -47,7 +49,7 @@ class Component {
         context.fillStyle = this.color;
         context.fillRect(this.x, this.y, this.width, this.height);
     }
-    newPsition() {
+    newPosition() {
         this.x += this.speedX;
         this.y += this.speedY;
     }
