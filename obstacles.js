@@ -8,7 +8,7 @@ let obstacles = []; //array to receive random values to generate obstacles
 const game = {
     frames: 0, //start has no moving
     start: function() {
-        this.interval = setInterval(updateGame, 10);
+        this.interval = setInterval(updateGame, 20);
     },
     //for game over
     stop: function() {
@@ -17,6 +17,9 @@ const game = {
     clear: function() {
         context.clearRect(0, 0, wallCanvas.width, wallCanvas.height);
     },
+    drawBackground: function() {
+        updateCanvasBackground();
+    }
     //score: function() {
     //
     //}
@@ -25,6 +28,7 @@ const game = {
 //function to make the game run
 function updateGame() {
         game.clear();
+        game.drawBackground();
         updateObstacles();
 }
 
@@ -69,19 +73,20 @@ function updateObstacles() {
         obstacles[i].x -= 1;
         obstacles[i].update();
     
-    
+    }
     //the obstacles
     game.frames += 1;
+    console.log(game.frames);
     if (game.frames % 120 === 0) {
 
-    }
-            //push obstacles standart
+    
+            //var obstacles standart
     let minHeight = 20;
     let maxHeight = 340;
     let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
     let minGap = 50;
     let maxGap = 340;
-    let gap = Math.floor(Math.random() + (maxGap - minGap + 1) + minGap);
+    let gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
 
             //Top obstacle
@@ -101,10 +106,12 @@ function updateObstacles() {
         height + gap);
 
         obstacles.push(botObstacle);
+        
+    
+        }
+
     }
 
-    console.log(obstacles);
-}
 
 //to start
 game.start();

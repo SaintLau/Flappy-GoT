@@ -2,11 +2,12 @@
 //const context = wallCanvas.getContext('2d');
 
 const image = new Image();
-image.src = ' /Users/laurasantos/Desktop/ironhack/ProjectFlappyGoT/images/ice-game-of-thrones-a-song-of-ice-and-fire-the-wall-wallpaper-preview.jpg'
+image.src = 'images/ice-game-of-thrones-a-song-of-ice-and-fire-the-wall-wallpaper-preview.jpg'
+
 const backgroundImage = {
     image: image,
     x: 0,
-    speed: 0,
+    speed: -1,
         move: function() {
         this.x += this.speed; //-1 -2 -3 
         this.x %= wallCanvas.width; //-500%500=0 => -1 -2 -3
@@ -17,12 +18,12 @@ const backgroundImage = {
     }
 }
 
-function updateCanvas() {
+function updateCanvasBackground() {
       backgroundImage.move();
-      context.clearRect(0, 0, wallCanvas.width, wallCanvas.height);
+    //  context.clearRect(0, 0, wallCanvas.width, wallCanvas.height);
       backgroundImage.draw();
       
-      requestAnimationFrame(updateCanvas);
+    //  requestAnimationFrame(updateCanvas);
 }
 
-updateCanvas();
+//updateCanvas();
