@@ -32,7 +32,7 @@ const game = {
     //    const points = Math.floor(this.frames / 100);
         context.font = '20px game of thrones';
         context.fillStyle = 'red';
-        context.fillText(`Score: ${this.score}`, 350, 50);
+        context.fillText(`Score: ${this.score}`, 350, 50); //position of the score
     }
 }
 
@@ -56,16 +56,38 @@ class Component {
         this.x = x;
         this.y = y;
         this.speedX = 0;
-        this.speedY = 0;
+        this.speedY = 2;
+        this.gravity = 0.4;
+        this.gravitySpeed = 0;
     }
     update() { //to draw again and again
         context.fillStyle = this.color;
         context.fillRect(this.x, this.y, this.width, this.height);
     }
-    newPosition() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+    hitBot() {
+        let bottom = wallCanvas.height - this.height;
+        if (this.y > bottom) {
+            this.y = bottom;
+            this.speedY = 0;
+        }
     }
+    
+    hitTop() {
+        let top = 0;
+        if (this.y < top) {
+            this.y = top + this.height - (this.height / 2);
+            this.speedY = 0;
+        }
+    }
+
+    newPosition() {
+        this.hitBot();
+        this.speedY = this.speedY + (this.gravity - this.gravitySpeed);
+        this.y += this.speedY;
+        this.hitTop();
+    }
+    
+    
     left() {
         return this.x;
     }
