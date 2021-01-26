@@ -5,7 +5,16 @@
 //to have the character
 const character = new Component (30, 30, 'pink', 0, 200);
 
+//character selection
 
+/*
+const character = new Component {
+    khaleesi: {name: 'Khaleesi'}
+}
+
+
+
+*/
 
 //to control the character
         //When a key is pressed 

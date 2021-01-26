@@ -2,7 +2,7 @@
 //const context = wallCanvas.getContext('2d');
 
 const image = new Image();
-image.src = 'images/ice-game-of-thrones-a-song-of-ice-and-fire-the-wall-wallpaper-preview.jpg'
+image.src = '/images/throne2.jpeg'
 
 const backgroundImage = {
     image: image,
