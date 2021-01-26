@@ -12,6 +12,7 @@ const game = {
     start: function() {
         this.interval = setInterval(updateGame, 20);
     },
+    
     //for game over
     stop: function() {
         clearInterval(this.interval);
@@ -157,5 +158,4 @@ function updateObstacles() {
     }
 
 
-//to start
-game.start();
+

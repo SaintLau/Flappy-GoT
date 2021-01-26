@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'myfont';
+    src: '/Users/laurasantos/Library/Fonts/Game of Thrones.ttf' format(truetype);
+}
+
+
+
+.game-start p {
+    font-size: 18px;
+    font-family: 'Game of Thrones';
+
+}
