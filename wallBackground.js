@@ -9,8 +9,8 @@ const backgroundImage = {
     x: 0,
     speed: -1,
         move: function() {
-        this.x += this.speed; //-1 -2 -3 
-        this.x %= wallCanvas.width; //-500%500=0 => -1 -2 -3
+        this.x += this.speed; 
+        this.x %= wallCanvas.width; 
     },
     draw: function() {
         context.drawImage(this.image, this.x, 0);

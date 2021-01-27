@@ -2,33 +2,49 @@
 //const context = wallCanvas.getContext('2d');
 
 
-//to have the character
-const character = new Component (30, 30, 'pink', 0, 200);
+//to have the character    //
 
-//character selection
+
+//drawMainCharacter() {
+ //   this.character.drawImage('./images/khaleesiDragonNoBack.jpg');
+//}
 
 /*
-const character = new Component {
-    khaleesi: {name: 'Khaleesi'}
+const img = new Image();
+character.src = './images/khaleesiDragonNoBack.jpg';
+
+character.onload = () => {
+    context.drawImage(character, 0, 0);
 }
+*/
+//to try
+/*
+const image = new Image();
+image.src = '/images/khaleesiDragonNoBack.jpg'
 
+const characterOne = {
+    image: image,
 
+    draw: function() {
+        drawImage(this.image);
+        
+    },
+}
+function updateCharacterOne() {
+    characterOne.draw();
+}
 
 */
 
-//to control the character
-        //When a key is pressed 
-document.addEventListener('keydown', e => {
-    if(e.code === 'Space') {
-        character.gravitySpeed = 0.8;
-    }
+/*
+window.addEventListener('characterOne', function() {
+    let image = document.getElementById("startGame");
+    document.body.appendChild('wallCanvas');
+    context.drawImage(image, 0, 0);
 });
 
-document.addEventListener('keyup', e => {
-    if(e.code === 'Space') {
-        character.gravitySpeed = 0;
-    }
-});
+*/
+
 
 // document.addEventListener('keydown', e => {
 //     switch (e.keyCode){

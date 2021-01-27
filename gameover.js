@@ -3,6 +3,7 @@
 
 
 //What happens if hit? 
+
 function gameOver() {
     const hit = obstacles.some((obstacle) => {
         return character.hitWith(obstacle);

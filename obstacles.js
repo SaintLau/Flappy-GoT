@@ -1,59 +1,10 @@
-const wallCanvas = document.getElementById('wall');
-const context = wallCanvas.getContext('2d');
-
-//this class will represent the obstacles in the game. Here it will be defined their behaviour
-let obstacles = []; //array to receive random values to generate obstacles
-
-//Here will be the main variable to make this work - Start, Stop, Points
-const game = {
-    frames: 0, //start has no moving
-    score: 0, //start has no moving
-
-    start: function() {
-        this.interval = setInterval(updateGame, 20);
-    },
-    
-    //for game over
-    stop: function() {
-        clearInterval(this.interval);
-    },
-
-    clear: function() {
-        context.clearRect(0, 0, wallCanvas.width, wallCanvas.height);
-    },
-
-    drawBackground: function() {
-        updateCanvasBackground();
-    },
-
-    keepingScore: function() {
-        if (game.frames > 818 && game.frames % 120 === 0) {
-            this.score++;
-        }
-    //    const points = Math.floor(this.frames / 100);
-        context.font = '20px game of thrones';
-        context.fillStyle = 'red';
-        context.fillText(`Score: ${this.score}`, 350, 50); //position of the score
-    }
-}
-
-//function to make the game run
-function updateGame() {
-        game.clear();
-        game.drawBackground();
-        character.newPosition();
-        character.update();
-        updateObstacles();
-        gameOver();
-        game.keepingScore();
-}
-
-
 class Component {
-    constructor(width, height, color, x, y) {
+    constructor(width, height, image, x, y,) {       //(img, width, height, x, y,)
+        //this.character = new Player(this, 30, 30, 150, 150)
+        //this.img = img;
         this.width = width;
         this.height = height;
-        this.color = color;
+        this.image = image;
         this.x = x;
         this.y = y;
         this.speedX = 0;
@@ -61,9 +12,22 @@ class Component {
         this.gravity = 0.4;
         this.gravitySpeed = 0;
     }
+
+
     update() { //to draw again and again
-        context.fillStyle = this.color;
-        context.fillRect(this.x, this.y, this.width, this.height);
+        const imageGame = new Image();
+        if(this.image === 'sword') {
+            imageGame.src = './images/sword-removebg-preview (1).png'; 
+        }else if(this.image === 'swordbot') {
+            imageGame.src = './images/swordbot-removebg-preview.png';
+        
+        } else if(this.image === 'Jon') {
+            imageGame.src = './images/jonSnow-removebg-preview.png' 
+        } else {
+            imageGame.src = './images/khaleesiDragon-removebg-preview.png' 
+            
+        }
+        context.drawImage(imageGame, this.x, this.y, this.width, this.height)
     }
     hitBot() {
         let bottom = wallCanvas.height - this.height;
@@ -88,7 +52,7 @@ class Component {
         this.hitTop();
     }
     
-    
+
     left() {
         return this.x;
     }
@@ -110,7 +74,7 @@ class Component {
                  this.left() > obstacle.right())
     }
 }
-
+ 
 
 //function for obstacles to be updated and generated 
 function updateObstacles() {
@@ -135,18 +99,18 @@ function updateObstacles() {
 
 
             //Top obstacle
-    let topObstacle = new Component(10,
+    let topObstacle = new Component(100,
         height,
-        'orange',
+        "sword",                //"./images/sword.jpg",
         wallCanvas.width,
         0); //the value on y will be 0
 
         obstacles.push(topObstacle);
 
             //Bot obstacle
-    let botObstacle = new Component(10,
+    let botObstacle = new Component(100,
         wallCanvas.width - height - gap,
-        'orange',
+        'swordbot',   //'./images/sword.jpg"',
         wallCanvas.width,
         height + gap);
 
