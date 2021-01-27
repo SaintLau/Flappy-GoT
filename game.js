@@ -43,7 +43,7 @@ const game = {
         if(game.frames <= 200){
             context.font = '20px game of thrones';
             context.fillStyle = 'red';
-            context.fillText(`When you play the Flappy GoT, you win or you die`, 350, 50);
+            context.fillText(`When you play the Flappy GoT, you win or you die`, 10, 100);
         } else if (game.frames  === 200) {
             context.clearRect(350, 50, 100, 100);
         }
