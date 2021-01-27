@@ -8,12 +8,13 @@ let character; //array to receive random values to generate obstacles
 //Here will be the main variable to make this work - Start, Stop, Points
 const game = {
     frames: 0, //start has no moving
+   // text: '',
     score: 0, //start has no moving
-    
+
 
     start: function() {
         this.interval = setInterval(updateGame, 20);
-        //this.character = khaleesi or jon
+        
     },
     selectCharacter: function(char) {
         if(char === 'Khaleesi') {
@@ -38,9 +39,16 @@ const game = {
         updateCanvasBackground();
     },
 
-  // drawCharacter: function() {
-  //      updateCharacterOne();
-   // },
+   message: function() {   // setence for the start
+        if(game.frames <= 200){
+            context.font = '20px game of thrones';
+            context.fillStyle = 'red';
+            context.fillText(`When you play the Flappy GoT, you win or you die`, 350, 50);
+        } else if (game.frames  === 200) {
+            context.clearRect(350, 50, 100, 100);
+        }
+      
+    },
 
     keepingScore: function() {
         if (game.frames > 818 && game.frames % 120 === 0) {
@@ -58,8 +66,9 @@ function updateGame() {
         game.clear();
         game.drawBackground();
      // game.drawCharacter();
-     character.newPosition();
-     character.update();
+        game.message();
+        character.newPosition();
+        character.update();
         updateObstacles();
         gameOver();
         game.keepingScore();

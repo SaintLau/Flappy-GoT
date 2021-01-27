@@ -1,7 +1,6 @@
 class Component {
     constructor(width, height, image, x, y,) {       //(img, width, height, x, y,)
-        //this.character = new Player(this, 30, 30, 150, 150)
-        //this.img = img;
+        
         this.width = width;
         this.height = height;
         this.image = image;
@@ -90,16 +89,16 @@ function updateObstacles() {
 
     
             //var obstacles standart
-    let minHeight = 20;
+    let minHeight = 60;
     let maxHeight = 340;
     let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-    let minGap = 50;
+    let minGap = 70;
     let maxGap = 340;
     let gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
 
             //Top obstacle
-    let topObstacle = new Component(100,
+    let topObstacle = new Component(10,
         height,
         "sword",                //"./images/sword.jpg",
         wallCanvas.width,
@@ -108,7 +107,7 @@ function updateObstacles() {
         obstacles.push(topObstacle);
 
             //Bot obstacle
-    let botObstacle = new Component(100,
+    let botObstacle = new Component(10,
         wallCanvas.width - height - gap,
         'swordbot',   //'./images/sword.jpg"',
         wallCanvas.width,
@@ -116,7 +115,6 @@ function updateObstacles() {
 
         obstacles.push(botObstacle);
         
-    
         }
 
     }
