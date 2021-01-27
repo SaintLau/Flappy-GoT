@@ -21,6 +21,27 @@
     float: left;
     padding: 20px 0px;;
 }
+
+.hidden {
+    display: none;
+}
+
+#end-message {
+    position: relative;
+    top: 10px;
+    left: 60px;
+    font-size: 50px;
+    color: red;
+    z-index: 3;
+}
+
+/* #wall {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+} */
+
 /*
 .khaleesi {
     float: left;
