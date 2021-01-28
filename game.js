@@ -63,6 +63,7 @@ const game = {
 
 //function to make the game run
 function updateGame() {
+        game.playTheme();
         game.clear();
         game.drawBackground();
      // game.drawCharacter();

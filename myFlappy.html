@@ -7,18 +7,22 @@
     <link rel="stylesheet" href = "style.css"> 
 </head>
 <body>
+    <audio id="theme" src="./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4" preload="auto"></audio> 
     <div class="game-start">
         <img src="/images/startImgFlappyGoTLogo.jpg " alt=" " class="logo-img"/>
         <br>
-        <p>Use the Space Bar to Survive!</p> 
+        <p>Use the Space Bar to Survive</p> 
         <img src="/images/spaceBar.jpg" class="space-bar"/>
         <br>
         <p>By the way, to survive, you might need some help.<br> Select your saviour:</p>
+
+<div class="center-char">
     <div class="khaleesi">
         <figure>
         <input type="image" src="images/khaleesiDragon-removebg-preview.png" id="startGame" />
         <figcaption>Khaleesi</figcaption> 
         </div>    
+
     <div class="jon">
         </figure>
         <figure>
@@ -28,7 +32,10 @@
 
         <p>A tip for the ones willing to risk their lifes, <br>it's better to click the image below before winter comes</p>
         
-        </div>   
+        </div>  
+
+        </div>
+
     </div>
 
 
@@ -39,12 +46,13 @@
         <canvas id="wall" width="728" height="410"></canvas>
     </div>
 
-   <!--  <script src="audio.js"></script> -->
+   <script src="audio.js"></script>
    <script src="game.js"></script> 
    <script src="obstacles.js"></script> 
    <script src="character.js"></script>
    <script src="gameover.js"></script>
    <script src="wallBackground.js"></script> 
    <script src="buttonStartGame.js"></script>
+</audio> 
 </body>
 </html>   
