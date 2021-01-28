@@ -1,6 +1,3 @@
-//const wallCanvas = document.getElementById('wall');
-//const context = wallCanvas.getContext('2d');
-
 const image = new Image();
 image.src = '/images/throne2.jpeg'
 
@@ -20,10 +17,8 @@ const backgroundImage = {
 
 function updateCanvasBackground() {
       backgroundImage.move();
-    //  context.clearRect(0, 0, wallCanvas.width, wallCanvas.height);
       backgroundImage.draw();
       
-    //  requestAnimationFrame(updateCanvas);
+    
 }
 
-//updateCanvas();
