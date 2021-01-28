@@ -18,6 +18,8 @@ body {
     font-size: 18px;
     font-family: 'Game of Thrones';
     color: white;
+    text-align: center;
+
 }
 
 .space-bar {
@@ -35,10 +37,38 @@ body {
 }
 
 .center-char {
-    width: 50%;
-    float: left;
-    /*padding: 20px; */
+    display: inline-flex;
+    width: 100%;
+    float: right;
+    
 }
+
+
+#startGame {
+    position: relative;
+    bottom: 100px;
+}
+
+.figkhal {
+    position: relative;
+    bottom: 90px;
+    left: 20px;
+}
+
+#startGameTwo {
+    position: relative;
+    left: 700px;
+    bottom: 100px;
+}
+
+.figjon {
+    position: relative;
+    left: 700px;
+    bottom: 100px;
+}
+
+
+
 
 .hidden {
     display: none;
