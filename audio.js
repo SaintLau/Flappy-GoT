@@ -1,17 +1,17 @@
-/*
-let audio = document.createElement("audio");
-audio.src = "./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4";
-audio.play();
-//audio.pause();
+class Sound {
+    constructor(src) {
+        this.sound = document.createElement('audio');
+        this.sound.src = src;
+        this.sound.setAttribute('preload', 'auto');
+        this.sound.setAttribute('controls', 'none');
+        this.sound.style.display = 'none';
 
-/*
-function soundBackground() { 
-    document.all.sound.src = "./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4"
-    } 
-    window.onload = soundBackground; 
+        document.body.appendChild(this.sound);
+    }
 
-    */
-
-function playTheme() {
-    document.getElementById('theme').play();
+    playAudio() {
+        this.sound.play()
+    }
 }
+
+let hitSound = new Sound('./sound/crow (online-audio-converter.com).mp3');

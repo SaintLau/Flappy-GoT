@@ -89,7 +89,7 @@ function updateObstacles() {
 
     
             //var obstacles standart
-    let minHeight = 40;
+    let minHeight = 70;
     let maxHeight = 340;
     let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
     let minGap = 50;

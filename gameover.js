@@ -1,5 +1,6 @@
 //const wallCanvas = document.getElementById('wall');
 //const context = wallCanvas.getContext('2d');
+//let hitSound = new Audio("./sound/crow.wav");
 
 let gameOverSentence = [
     "Valar Morghulis",
@@ -24,8 +25,11 @@ function gameOver() {
     });
 
     if(hit) {
+        hitSound.playAudio()
+        
         game.stop();
         const endMessage = document.getElementById('end-message');
         endMessage.classList.remove('hidden');
+        endMessage.innerText = randomGameOverSentence;
     } 
 }

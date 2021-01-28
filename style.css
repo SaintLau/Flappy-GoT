@@ -40,21 +40,32 @@ body {
     /*padding: 20px; */
 }
 
-
-
-
 .hidden {
     display: none;
 }
 
+.message-box {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
 #end-message {
    position: relative;
-    top: 500px;
-    /*left: 900px; */
-    right: 200px;
-    font-size: 50px;
+    bottom: 325px;
+    left: 300px;
+    text-align: center;
+    line-height: 50px;
+    text-shadow: 5px 3px black;
+    /* right: 200px; */
+    font-size: 30px;
     color: red;
-    z-index: 3;
+    z-index: 2;
+    font-family: 'Game of Thrones';
+    word-spacing: 5px;
 }
 
 #wall {
@@ -63,13 +74,5 @@ body {
     margin-right: auto;
     width: 70%;
 } 
-
-/* #wall {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    z-index: 1;
-} */
-
 
 

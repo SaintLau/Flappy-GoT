@@ -5,6 +5,11 @@ const context = wallCanvas.getContext('2d');
 let obstacles = [];
 let character; //array to receive random values to generate obstacles
 
+//audio-theme
+let song = new Audio ("./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4");
+
+
+
 //Here will be the main variable to make this work - Start, Stop, Points
 const game = {
     frames: 0, //start has no moving
@@ -63,7 +68,7 @@ const game = {
 
 //function to make the game run
 function updateGame() {
-        game.playTheme();
+        //game.playTheme();
         game.clear();
         game.drawBackground();
      // game.drawCharacter();
