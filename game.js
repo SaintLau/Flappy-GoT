@@ -76,6 +76,7 @@ function updateGame() {
 //to control the character
         //When a key is pressed 
         document.addEventListener('keydown', e => {
+            e.preventDefault();
             if(e.code === 'Space') {
                 character.gravitySpeed = 0.8;
             }
