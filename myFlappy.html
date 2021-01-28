@@ -7,29 +7,25 @@
     <link rel="stylesheet" href = "style.css"> 
 </head>
 <body>
-   
-    <div class="game-start">
+    <div id="intro" class="game-start">
         <img src="/images/startImgFlappyGoTLogo.jpg " alt=" " class="logo-img"/>
-        <br>
 
- <p>Select your Ruler</p> 
+        <div class="center-char">
+            <div class="khaleesi">
+                <figure>
+                    <input type="image" src="images/khaleesiDragon-removebg-preview.png" id="startGame" />
+                    <figcaption class="figkhal">Khaleesi</figcaption> 
+                </figure>
+            </div>   
 
-    <div class="center-char">
-    <div class="khaleesi">
-        <figure>
-        <input type="image" src="images/khaleesiDragon-removebg-preview.png" id="startGame" />
-        <figcaption class="figkhal">Khaleesi</figcaption> 
-        </div>    
+            <p>Select your Ruler</p> 
 
-    <div class="jon">
-        </figure>
-        <figure>
-        <input type="image" src="images/jonSnow-removebg-preview.png" id="startGameTwo" /> 
-        <figcaption class="figjon">Jon Snow</figcaption>
-        </figure>
-
-        </div>  
-
+            <div class="jon">
+                <figure>
+                <input type="image" src="images/jonSnow-removebg-preview.png" id="startGameTwo" /> 
+                <figcaption class="figjon">Jon Snow</figcaption>
+                </figure>
+            </div>  
         </div>
 
         <p>Use the Space Bar to Survive</p> 
@@ -37,9 +33,7 @@
         <br>
         <p>A tip for the ones willing to risk their lifes, it's better to click the game screen before winter comes</p>
     </div>
-
-
-    <div id="the-game">
+    <div id="the-game" class="hidden">
         <canvas id="wall" width="728" height="410"></canvas>
         <div class="message-box">
             <p id="end-message" class="hidden">Game Over</p>
@@ -53,6 +47,6 @@
    <script src="gameover.js"></script>
    <script src="wallBackground.js"></script> 
    <script src="buttonStartGame.js"></script>
-   <!-- <audio id="theme" src="./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4" preload="auto"></audio> -->
+
 </body>
 </html>   

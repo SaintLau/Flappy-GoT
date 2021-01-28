@@ -1,3 +1,8 @@
+//let backgroundAudio = document.getElementById("theme");
+let backgroundAudio = new Audio('./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4');
+//backgroundAudio.pause();
+
+
 class Sound {
     constructor(src) {
         this.sound = document.createElement('audio');
@@ -15,3 +20,5 @@ class Sound {
 }
 
 let hitSound = new Sound('./sound/crow (online-audio-converter.com).mp3');
+
+

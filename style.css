@@ -36,36 +36,51 @@ body {
 
 }
 
+#the-game,
+.game-start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .center-char {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 800px;
+
+}
+/* .center-char {
     display: inline-flex;
     width: 100%;
     float: right;
     
-}
+} */
 
 
-#startGame {
+
+/* #startGame {
     position: relative;
     bottom: 100px;
-}
+} */
 
-.figkhal {
+/* .figkhal {
     position: relative;
     bottom: 90px;
     left: 20px;
-}
+} */
 
-#startGameTwo {
+/* #startGameTwo {
     position: relative;
     left: 700px;
     bottom: 100px;
-}
+} */
 
-.figjon {
+/* .figjon {
     position: relative;
     left: 700px;
     bottom: 100px;
-}
+} */
 
 
 
@@ -77,29 +92,28 @@ body {
 .message-box {
     display: flex;
     flex-wrap: wrap;
-    max-width: 500px;
-    min-height: 200px;
+    max-width: 1200px;
+    min-height: 300px;
     justify-content: center;
     align-items: center;
 }
 
 #end-message {
    position: relative;
-    bottom: 325px;
-    left: 300px;
+    bottom: 550px;
     text-align: center;
-    line-height: 50px;
-    text-shadow: 5px 3px black;
+    line-height: 100px;
+    text-shadow: 8px 5px black;
     /* right: 200px; */
-    font-size: 30px;
+    font-size: 60px;
     color: red;
     z-index: 2;
     font-family: 'Game of Thrones';
-    word-spacing: 5px;
+    word-spacing: 20px;
 }
 
 #wall {
-    display: block;
+    /* display: block; */
     margin-left: auto;
     margin-right: auto;
     width: 70%;

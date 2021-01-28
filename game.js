@@ -6,7 +6,7 @@ let obstacles = [];
 let character; //array to receive random values to generate obstacles
 
 //audio-theme
-let song = new Audio ("./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4");
+//let song = new Audio ("./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4");
 
 
 
@@ -18,6 +18,7 @@ const game = {
 
 
     start: function() {
+        backgroundAudio.play();
         this.interval = setInterval(updateGame, 20);
         
     },
@@ -31,6 +32,7 @@ const game = {
     },
     //for game over
     stop: function() {
+        backgroundAudio.pause();
         clearInterval(this.interval);
         obstacles = [];
         this.frames = 0;
@@ -68,10 +70,9 @@ const game = {
 
 //function to make the game run
 function updateGame() {
-        //game.playTheme();
+        backgroundAudio.play();
         game.clear();
         game.drawBackground();
-     // game.drawCharacter();
         game.message();
         character.newPosition();
         character.update();
