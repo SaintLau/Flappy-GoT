@@ -1,21 +1,13 @@
 const wallCanvas = document.getElementById('wall');
 const context = wallCanvas.getContext('2d');
 
-//this class will represent the obstacles in the game. Here it will be defined their behaviour
+
 let obstacles = [];
-let character; //array to receive random values to generate obstacles
+let character; 
 
-//audio-theme
-//let song = new Audio ("./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4");
-
-
-
-//Here will be the main variable to make this work - Start, Stop, Points
 const game = {
-    frames: 0, //start has no moving
-   // text: '',
-    score: 0, //start has no moving
-
+    frames: 0, 
+    score: 0, 
 
     start: function() {
         backgroundAudio.play();
@@ -24,9 +16,9 @@ const game = {
     },
     selectCharacter: function(char) {
         if(char === 'Khaleesi') {
-          character = new Component (60, 60, 'Khaleesi', 0, 200); //THE ONE WORKING
+          character = new Component (60, 60, 'Khaleesi', 0, 200); 
         } else {
-            character = new Component (60, 60, 'Jon', 0, 200); //THE ONE WORKING
+            character = new Component (60, 60, 'Jon', 0, 200); 
         }
         game.start();
     },
@@ -46,7 +38,7 @@ const game = {
         updateCanvasBackground();
     },
 
-   message: function() {   // setence for the start
+   message: function() {  
         if(game.frames <= 200){
             context.font = '20px game of thrones';
             context.fillStyle = 'red';
@@ -61,10 +53,9 @@ const game = {
         if (game.frames > 818 && game.frames % 120 === 0) {
             this.score++;
         }
-  //    const points = Math.floor(this.frames / 100);
         context.font = '20px game of thrones';
         context.fillStyle = 'red';
-        context.fillText(`Score: ${this.score}`, 350, 50); //position of the score
+        context.fillText(`Score: ${this.score}`, 350, 50); 
     }
 }
 

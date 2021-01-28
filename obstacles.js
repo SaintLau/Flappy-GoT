@@ -1,5 +1,5 @@
 class Component {
-    constructor(width, height, image, x, y,) {       //(img, width, height, x, y,)
+    constructor(width, height, image, x, y,) {       
         
         this.width = width;
         this.height = height;
@@ -13,7 +13,7 @@ class Component {
     }
 
 
-    update() { //to draw again and again
+    update() { 
         const imageGame = new Image();
         if(this.image === 'sword') {
             imageGame.src = './images/sword-removebg-preview (1).png'; 
@@ -66,7 +66,7 @@ class Component {
         return this.y + this.height;
     }
 
-    hitWith(obstacle) {  //method for the hit to stop the game
+    hitWith(obstacle) {  //for the hit to stop the game
         return !(this.bottom() < obstacle.top() ||
                  this.top() > obstacle.bottom() ||
                  this.right() < obstacle.left() ||
@@ -89,27 +89,27 @@ function updateObstacles() {
 
     
             //var obstacles standart
-    let minHeight = 70;
-    let maxHeight = 340;
+    let minHeight = 30;
+    let maxHeight = 300;
     let height = Math.floor(Math.random() * (maxHeight - minHeight + 1) + minHeight);
-    let minGap = 50;
-    let maxGap = 340;
+    let minGap = 70;
+    let maxGap = 400;
     let gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
 
 
             //Top obstacle
-    let topObstacle = new Component(50,
+    let topObstacle = new Component(30,
         height,
-        "sword",                //"./images/sword.jpg",
+        "sword",                
         wallCanvas.width,
         0); //the value on y will be 0
 
         obstacles.push(topObstacle);
 
             //Bot obstacle
-    let botObstacle = new Component(50,
+    let botObstacle = new Component(30,
         wallCanvas.width - height - gap,
-        'swordbot',   //'./images/sword.jpg"',
+        'swordbot',   
         wallCanvas.width,
         height + gap);
 

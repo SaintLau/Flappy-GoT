@@ -1,7 +1,3 @@
-//const wallCanvas = document.getElementById('wall');
-//const context = wallCanvas.getContext('2d');
-//let hitSound = new Audio("./sound/crow.wav");
-
 let gameOverSentence = [
     "Valar Morghulis",
     "If you think this has a happy ending you haven’t been paying attention.",
@@ -14,7 +10,7 @@ let gameOverSentence = [
 ]
 
 let randomGameOverSentence = gameOverSentence[Math.floor(Math.random() * gameOverSentence.length)];
- //create an alert box with setTimeout?
+
 
 
 //What happens if hit? 

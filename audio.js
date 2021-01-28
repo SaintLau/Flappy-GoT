@@ -1,7 +1,4 @@
-//let backgroundAudio = document.getElementById("theme");
 let backgroundAudio = new Audio('./sound/Game of Thrones - Main Theme (Extended) HD(720p).mp4');
-//backgroundAudio.pause();
-
 
 class Sound {
     constructor(src) {
