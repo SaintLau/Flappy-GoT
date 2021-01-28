@@ -98,7 +98,7 @@ function updateObstacles() {
 
 
             //Top obstacle
-    let topObstacle = new Component(10,
+    let topObstacle = new Component(50,
         height,
         "sword",                //"./images/sword.jpg",
         wallCanvas.width,
@@ -107,7 +107,7 @@ function updateObstacles() {
         obstacles.push(topObstacle);
 
             //Bot obstacle
-    let botObstacle = new Component(10,
+    let botObstacle = new Component(50,
         wallCanvas.width - height - gap,
         'swordbot',   //'./images/sword.jpg"',
         wallCanvas.width,
