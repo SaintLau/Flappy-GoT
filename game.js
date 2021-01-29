@@ -40,7 +40,7 @@ const game = {
 
    message: function() {  
         if(game.frames <= 200){
-            context.font = '20px game of thrones';
+            context.font = '20px myfont';
             context.fillStyle = 'red';
             context.fillText(`When you play the Flappy GoT, you win or you die`, 10, 100);
         } else if (game.frames  === 200) {
@@ -53,7 +53,7 @@ const game = {
         if (game.frames > 818 && game.frames % 120 === 0) {
             this.score++;
         }
-        context.font = '20px game of thrones';
+        context.font = '20px myfont';
         context.fillStyle = 'red';
         context.fillText(`Score: ${this.score}`, 350, 50); 
     }
