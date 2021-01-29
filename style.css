@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'myfont';
-    src: '/Users/laurasantos/Library/Fonts/Game of Thrones.ttf' format(truetype);
+    src: './Fonts/Game of Thrones.ttf' format(truetype);
 }
 
 body {
